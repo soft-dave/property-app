@@ -1,0 +1,47 @@
+= f.hidden_field :property_type, :value => @property.property_type, :id=>"ptype"
+= f.hidden_field :privacy, :value => @property.privacy, :id=>"privacy"
+= f.hidden_field :allow_multiple_user_to_share, :value => @property.allow_multiple_user_to_share, :id=>"allow"
+= f.hidden_field :no_of_badroom, :value => @property.no_of_badroom, :id=>"numbadroom"
+
+%p
+  %b Rent
+.field
+  $#{f.text_field :rent, :placeholder => "Rent"}#{f.select :rent_type, Property.rent_types}
+  %br/
+%br/
+Allow rent negotiation
+%input#checkbox1{:type => "checkbox"}/
+%br/
+%br/
+
+#autoUpdate.autoUpdate
+  .field
+    = f.label :unit_title
+    = f.text_field :unit_title, :placeholder => "Unit title"
+  .field
+    = f.label :unit_rent
+    = f.text_field :unit_rent, :placeholder => "Unit rent"
+  %br/
+#holder
+.field
+  = f.select :lease_type, Property.lease_types
+  %br/
+  %br/
+.field
+  %b Included Utilities
+  %br/
+  %br/
+  #utilities Electricity Hot water Heating Gas Stander kitchen applications
+  = f.text_field :utilities, :placeholder => "Others"
+.field
+  %b Amenities and Features
+  %br/
+  %br/
+  #amenities Furnished Unfurnished Non smoking Internet Parking Gym Swimming pool Laundry facility
+  = f.text_field :amenities_and_features, :placeholder => "Others"
+.field
+  %b Local Attractions
+  %br/
+  %br/
+  #attractions University Public transportation Shops and restaurants Central location Downtown
+  = f.text_field :nearby_attractions, :placeholder => "Nearby attractions"

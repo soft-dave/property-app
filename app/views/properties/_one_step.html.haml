@@ -1,0 +1,55 @@
+.field
+  %b= f.label :type_of_property
+  %br/
+  = f.select :property_type, Property::PROPERTYTYPE, :id=>"propertyType"
+.field
+  %b= f.label :privacy
+  %br/
+  = f.select :privacy, Property::PRIVACY, :id=>"privacyType"
+%p
+  %b Property details
+.field
+  = f.label :no_of_badroom
+  %br/
+  = f.number_field :no_of_badroom, :placeholder => "Number of badroom", :id=>"badroom"
+.field
+  = f.label :no_of_bathroom
+  %br/
+  = f.number_field :no_of_bathroom, :placeholder => "Number of bathroom", :id=>"bathroom"
+%p
+  %b Allow multiple tenants to have a joint lease ?
+.field
+  = f.label :allow_multiple_user_to_share
+  = f.check_box :allow_multiple_user_to_share, :id => "multiple_user"
+  %br/
+  = f.label :allow_individual_user_to_rent
+  = f.check_box :allow_individual_user_to_rent, :id => "individual_user"
+.field
+  = f.select :lease_type, Property.lease_types
+  %br/
+  %br/
+.field
+  = f.text_field :availibility, :placeholder => "When is the property available from?", :id=>"loaddatepicker"
+  %span.add-on
+    %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
+.field
+  %br/
+.field
+  = f.label :accept_Mon_Fri_Booking
+  = f.check_box :accept_mon_fri_booking
+%p
+  %b Location
+.field
+  = f.label :same_As_Landlord_Address
+  = f.check_box :same_as_landlord_address
+.field
+  = f.label :different_Address
+  = f.check_box :different_address
+%p
+.field
+  %br/
+.field
+  = f.label :unit_number
+  %br/
+  = f.number_field :unit_number, :placeholder => "Unit Number"
+  %br/

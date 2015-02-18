@@ -1,0 +1,59 @@
+%p#notice= notice
+%p
+  %strong User:
+  = @property.user_id
+%p
+  %strong Property type:
+  = @property.property_type
+%p
+  %strong Privacy:
+  = @property.privacy
+%p
+  %strong No of badroom:
+  = @property.no_of_badroom
+%p
+  %strong No of bathroom:
+  = @property.no_of_bathroom
+%p
+  %strong Allow multi tenants join lease:
+%p
+  %strong Street number:
+  = @property.street_number
+%p
+  %strong Address:
+%p
+  %strong State:
+  = @property.state
+%p
+  %strong Country:
+  = @property.country
+%p
+  %strong Zip code:
+  = @property.zip_code
+%p
+  %strong Unit number:
+  = @property.unit_number
+%p
+  %strong Rent:
+  = @property.rent
+%p
+  %strong Lease type:
+  = @property.lease_type
+%p
+  %strong Unit title:
+  = @property.unit_title
+%p
+  %strong Unit rent:
+  = @property.unit_rent
+%p
+  %strong Property description:
+  = @property.description
+%p
+  %strong Rules:
+  = @property.rules
+%p
+  %strong Housemates:
+  = @property.housemates
+= link_to 'Edit', edit_property_path(@property)
+|
+\#{link_to 'Back', properties_path}

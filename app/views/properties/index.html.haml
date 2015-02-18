@@ -1,0 +1,52 @@
+%p#notice= notice
+%h1 Listing Properties
+%table
+  %thead
+    %tr
+      %th User
+      %th Property type
+      %th Privacy
+      %th No of badroom
+      %th No of bathroom
+      %th Allow multi tenants join lease
+      %th Street number
+      %th Address
+      %th State
+      %th Country
+      %th Zip code
+      %th Unit number
+      %th Rent
+      %th Lease type
+      %th Unit title
+      %th Unit rent
+      %th Property description
+      %th Rules
+      %th Housemates
+      %th{:colspan => "3"}
+  %tbody
+    - @properties.each do |property|
+      %tr
+        %td= property.user_id
+        %td= property.property_type
+        %td= property.privacy
+        %td= property.no_of_badroom
+        %td= property.no_of_bathroom
+
+        %td= property.street_number
+
+        %td= property.state
+        %td= property.country
+        %td= property.zip_code
+        %td= property.unit_number
+        %td= property.rent
+        %td= property.lease_type
+        %td= property.unit_title
+        %td= property.unit_rent
+        %td= property.description
+        %td= property.rules
+        %td= property.housemates
+        %td= link_to 'Show', property
+        %td= link_to 'Edit', edit_property_path(property)
+        %td= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Property', new_property_path
