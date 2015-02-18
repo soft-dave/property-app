@@ -1,0 +1,77 @@
+.row
+  .col-md-10.col-md-offset-1
+    .mainBox.innerPage
+      .row
+        .col-md-12
+          .backArrow
+            %img{:alt => "", :height => "25", :src => "images/back-arrow.png", :width => "24"}/
+      .row
+        .col-md-6
+          .info
+            .rentBlock
+              %h3 Rent
+              %p
+                %img{:alt => "", :height => "20", :src => "images/dollar.png", :width => "20"}/
+                %input.input.mob.width100{:name => "", :placeholder => "Rent", :type => "text"}/
+                %span.dropDown
+                  %select.minwidth95.minwidth135
+                    %option Monthly
+                    %option Jan
+                    %option Feb
+              .verList.inner
+                %input{:name => "check", :type => "checkbox"}/
+                %label Allow rent negotiation
+        .col-md-6
+          .info
+            .categoryBlock
+              %h3.text-center Included Utilities
+              %p
+                %span Electricity
+                %span Hot water
+                %span Heating
+                %span Gas
+                %span Stander kitchen applications
+              %input.input2.width100per{:name => "", :placeholder => "Other", :type => "text"}/
+            .categoryBlock
+              %h3.text-center Amenities and Features
+              %p
+                %span Furnished
+                %span Unfurnished
+                %span Non smoking
+                %span Internet
+                = succeed "Gym" do
+                  %span Parking
+                %span Swimming pool
+                %span Laundry facility
+                %span Private bathroom
+                %span Private kitchen
+                %span Air-Conditioning
+                %span Cleaning service
+                %span Elevator
+                %span Spa bath
+                %span TV
+                %span Wi-Fi
+                %span Male accommodation
+                %span Female accommodation
+                %span Mixed accommodation
+              %input.input2.width100per{:name => "", :placeholder => "Other", :type => "text"}/
+            .categoryBlock
+              %h3.text-center Local Attractions
+              %p
+                %span University
+                %span Public transportation
+                %span Shops and restaurants
+                %span Central location
+                %span Downtown
+                %span Park and outdoor
+                %span Seafront
+                %span Waterfront/Riverside
+                %span Theatre
+              %input.input2.width100per{:name => "", :placeholder => "Nearby attractions", :type => "text"}/
+      .row
+        .col-md-12
+          %p  
+          %p  
+      .row
+        .col-md-12
+          %a.btn.btn-success.btn-lg.pull-right{:href => "#"} Continue
