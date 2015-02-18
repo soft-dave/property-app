@@ -1,0 +1,30 @@
+.row
+  .col-md-10.col-md-offset-1
+    .mainBox.innerPage
+      .row
+        .col-md-12
+          .backArrow
+            = image_tag 'back-arrow.png', :height => 25, :width => 24
+            %a.btn.btn-success.btn-lg.widthAuto.pull-right.marginTop-20{:href => "#"} Confirm
+      .row
+        .col-md-12
+          .info
+            .rentBlock
+              %h3 Property
+              .propertyBox
+                .title
+                  %span Property Title
+                  .camImg
+                    %a{:href => "#"}
+                      = image_tag 'cam-icon.png', :height => 47, :width => 47
+                %ul
+                  %li
+                    %a{:href => "#"} Property description
+                  %li
+                    %a{:href => "#"} Rules
+                  %li
+                    %a{:href => "#"} Housemates
+      .row
+        .col-md-12
+          %p  
+          %p

@@ -15,5 +15,6 @@
 #= require twitter/bootstrap
 #= require bootstrap-datetimepicker
 #= require turbolinks
+#= require twitter/bootstrap
 #= require jquery-fileupload
 #= require_tree .

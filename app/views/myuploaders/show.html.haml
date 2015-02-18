@@ -1,0 +1,6 @@
+%p#notice= notice
+%p
+  %strong Image:
+  = @myuploader.image
+= link_to 'Edit', edit_myuploader_path(@myuploader)
+= link_to 'Back', myuploaders_path

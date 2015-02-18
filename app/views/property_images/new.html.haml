@@ -1,0 +1,9 @@
+= javascript_include_tag "jquery-gdrive.js"
+= javascript_include_tag "//apis.google.com/js/client.js"
+
+= form_for @property_image, html: {multipart: "true", name: "photo_image_form"} do |f|
+  %input#gdrive_file{:type => "text", :name => 'property_image[attachment]'}/
+  %a#gdrive_file_selector{:href => "#"} Select file
+  %img#img_gdrive_file
+  = f.submit
+
