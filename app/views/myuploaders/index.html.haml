@@ -8,7 +8,7 @@
   %tbody
     - @myuploaders.each do |myuploader|
       %tr
-        %td= myuploader.image
+        %td= image_tag(myuploader.image.url)
         %td= link_to 'Show', myuploader
         %td= link_to 'Edit', edit_myuploader_path(myuploader)
         %td= link_to 'Destroy', myuploader, method: :delete, data: { confirm: 'Are you sure?' }
