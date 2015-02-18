@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  property_type: MyString
+  privacy: MyString
+  no_of_badroom: 1
+  no_of_bathroom: 1
+
+two:
+  property_type: MyString
+  privacy: MyString
+  no_of_badroom: 1
+  no_of_bathroom: 1
