@@ -9,9 +9,3 @@
         - @property.errors.full_messages.each do |message|
           %li= message
   = render "#{@property.current_step}_step", :f => f
-  - if !@property.last_step?
-    %p= f.submit "Continue"
-  - else
-    %p= f.submit "Confirm"
-  %p= f.submit "Back", :name => "back_button" unless @property.first_step?
-%p= link_to 'Back To Properties', properties_path

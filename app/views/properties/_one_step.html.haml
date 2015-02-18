@@ -1,55 +1,61 @@
-.field
-  %b= f.label :type_of_property
-  %br/
-  = f.select :property_type, Property::PROPERTYTYPE, :id=>"propertyType"
-.field
-  %b= f.label :privacy
-  %br/
-  = f.select :privacy, Property::PRIVACY, :id=>"privacyType"
-%p
-  %b Property details
-.field
-  = f.label :no_of_badroom
-  %br/
-  = f.number_field :no_of_badroom, :placeholder => "Number of badroom", :id=>"badroom"
-.field
-  = f.label :no_of_bathroom
-  %br/
-  = f.number_field :no_of_bathroom, :placeholder => "Number of bathroom", :id=>"bathroom"
-%p
-  %b Allow multiple tenants to have a joint lease ?
-.field
-  = f.label :allow_multiple_user_to_share
-  = f.check_box :allow_multiple_user_to_share, :id => "multiple_user"
-  %br/
-  = f.label :allow_individual_user_to_rent
-  = f.check_box :allow_individual_user_to_rent, :id => "individual_user"
-.field
-  = f.select :lease_type, Property.lease_types
-  %br/
-  %br/
-.field
-  = f.text_field :availibility, :placeholder => "When is the property available from?", :id=>"loaddatepicker"
-  %span.add-on
-    %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
-.field
-  %br/
-.field
-  = f.label :accept_Mon_Fri_Booking
-  = f.check_box :accept_mon_fri_booking
-%p
-  %b Location
-.field
-  = f.label :same_As_Landlord_Address
-  = f.check_box :same_as_landlord_address
-.field
-  = f.label :different_Address
-  = f.check_box :different_address
-%p
-.field
-  %br/
-.field
-  = f.label :unit_number
-  %br/
-  = f.number_field :unit_number, :placeholder => "Unit Number"
-  %br/
+.row
+  .col-md-10.col-md-offset-1
+    .mainBox
+      .row
+        .col-md-11.col-md-offset-1
+          .pageTitle
+            %h2 Type of Property
+      .row
+        .col-md-5.col-md-offset-1
+          .boxDetail
+            %p
+              %span.dropDown
+                = f.select :property_type, Property::PROPERTYTYPE, :id=>"propertyType"
+            %h2 Privacy
+            %p
+            %p
+              %span.dropDown
+                = f.select :privacy, Property::PRIVACY, :id=>"privacyType"
+            %h3 Property details
+            .propertyDetail
+              = image_tag 'bed-icon.png', :height => 21, :width => 21
+              = f.number_field :no_of_badroom, :placeholder => "Number of badroom", :id=>"badroom", :class => 'input'
+              = image_tag 'plusb-icon.png', :height => 21, :width => 21
+            .propertyDetail
+              = image_tag 'bathroom-icon.png', :height => 21, :width => 21
+              = f.number_field :no_of_bathroom, :placeholder => "Number of bathroom", :id=>"bathroom", :class => 'input'
+              = image_tag 'plusb-icon.png', :height => 21, :width => 21
+            .detailText
+              %span Allow multiple tenants to have a joint lease ?
+              %p
+                Yes. Allow multiple users to share the property
+                = f.check_box :allow_multiple_user_to_share, :id => "multiple_user"
+              %p
+                No. Only allow individual users to rent the property
+                = f.check_box :allow_individual_user_to_rent, :id => "individual_user"
+        .col-md-6
+          .boxDetail.rightPart
+            %p
+              %span.dropDown
+                = image_tag 'cal-icon.png', :height => 21, :width => 21
+                = f.select :lease_type, Property.lease_types
+            %p
+              = image_tag 'cal-icon.png', :height => 21, :width => 21
+              = f.text_field :availibility, :placeholder => "When is the property available from?", :id=>"loaddatepicker", :class => 'input2'
+            .verList
+              = f.check_box :accept_mon_fri_booking
+              %label.text-right Accept Monday-Friday Bookings
+            %h3 Location
+            .verList
+              = f.check_box :same_as_landlord_address
+              %label Same As Landlord address
+            .verList
+              = f.check_box :different_address
+              %label Different Address
+            %p
+              %input.input2{:name => "", :placeholder => "Address", :type => "text"}/
+            %p
+              = f.number_field :unit_number, :placeholder => "Unit Number"
+      .row
+        .col-md-12
+          = f.submit "Continue", :class => 'btn btn-success btn-lg pull-right'
