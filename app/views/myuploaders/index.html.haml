@@ -1,0 +1,16 @@
+%p#notice= notice
+%h1 Listing Myuploaders
+%table
+  %thead
+    %tr
+      %th Image
+      %th{:colspan => "3"}
+  %tbody
+    - @myuploaders.each do |myuploader|
+      %tr
+        %td= myuploader.image
+        %td= link_to 'Show', myuploader
+        %td= link_to 'Edit', edit_myuploader_path(myuploader)
+        %td= link_to 'Destroy', myuploader, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Myuploader', new_myuploader_path
