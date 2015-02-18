@@ -8,17 +8,20 @@
       .row
         .col-md-5.col-md-offset-1
           .boxDetail
-            %ul
-              %li
-                %a.property{:href => "#"} Full property
-              %li
-                %a.room{:href => "#"} Room / Unit
+            %p
+              %span.dropDown
+                %select.minwidth135
+                  %option Lease Type
+                  %option Lease Type
+                  %option Lease Type
             %h2 Privacy
-            %ul
-              %li
-                %a.privateProperty{:href => "#"} Private property
-              %li
-                %a.sharedProperty{:href => "#"} Shared property
+            %p
+            %p
+              %span.dropDown
+                %select.minwidth135
+                  %option Lease Type
+                  %option Lease Type
+                  %option Lease Type
             %h3 Property details
             .propertyDetail
               = image_tag 'bed-icon.png', :height => 21, :width => 21

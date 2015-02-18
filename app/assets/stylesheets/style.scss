@@ -149,26 +149,26 @@ body {
           text-decoration: none;
         }
         &.property {
-          background: url(../images/property-icon.png) top left no-repeat;
+          background: url(/assets/property-icon.png) top left no-repeat;
           &:hover {
             background-position: 0 -27px;
           }
         }
         &.room {
-          background: url(../images/property-icon.png) left -54px no-repeat;
+          background: url(/assets/property-icon.png) left -54px no-repeat;
           &:hover {
             background-position: 0 -81px;
           }
         }
         &.privateProperty {
-          background: url(../images/property-icon.png) left -108px no-repeat;
+          background: url(/assets/property-icon.png) left -108px no-repeat;
           height: 29px;
           &:hover {
             background-position: 0 -137px;
           }
         }
         &.sharedProperty {
-          background: url(../images/property-icon.png) left -166px no-repeat;
+          background: url(/assets/property-icon.png) left -166px no-repeat;
           height: 29px;
           &:hover {
             background-position: 0 -195px;
@@ -287,7 +287,7 @@ body {
     opacity: 0;
     margin: 0;
     + label {
-      background: url(../images/checkbox.png) right top no-repeat;
+      background: url(/assets/checkbox.png) right top no-repeat;
       min-height: 15px;
       padding-right: 20px;
       font-size: 11px;
@@ -296,7 +296,7 @@ body {
       font-weight: normal;
     }
     &:checked + label {
-      background: url(../images/checkbox.png) right -16px no-repeat;
+      background: url(/assets/checkbox.png) right -16px no-repeat;
       margin: 0;
       min-width: 200px;
     }
@@ -325,6 +325,13 @@ footer {
 }
 
 .footerSocialLinks {
+  a {
+    color: #cfcfcf;
+    &:hover {
+      color: #4dabf5;
+      text-decoration: none;
+    }
+  }
   p {
     margin: 0;
     padding: 0 0 10px 0;
@@ -384,7 +391,7 @@ footer {
   max-width: 235px;
   margin-bottom: 30px;
   .title {
-    background: #e1e1e1 url(../images/home.jpg) center 35px no-repeat;
+    background: #e1e1e1 url(/assets/home.jpg) center 35px no-repeat;
     color: #fff;
     font-size: 16px;
     padding: 10px;
@@ -410,14 +417,22 @@ footer {
     background: #fafafa;
     li {
       border-bottom: #eeeeee solid 1px;
-      padding: 12px 12px 50px 12px;
+      padding: 12px 12px 20px 12px;
       font-size: 11px;
       display: block;
-      &:last-child {
-        border-bottom: none;
-      }
-      a {
+      label {
         color: #009688;
+        font-weight: normal;
+      }
+      input[type="text"] {
+        border: #e8e8e8 solid 1px;
+        min-width: 200px;
+        color: #bdbdbd;
+        font-size: 11px;
+        padding: 3px 5px;
+        margin: 0;
+        background: #fafafa;
+        line-height: 16px;
       }
     }
   }
