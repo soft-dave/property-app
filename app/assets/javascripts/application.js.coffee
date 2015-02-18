@@ -12,6 +12,7 @@
 #
 #= require jquery
 #= require jquery_ujs
+#= require googlemap
 #= require turbolinks
 #= require jquery-fileupload
 #= require_tree .

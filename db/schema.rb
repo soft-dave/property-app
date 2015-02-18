@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150217140536) do
+ActiveRecord::Schema.define(version: 20150218101029) do
 
   create_table "properties", force: :cascade do |t|
     t.integer  "user_id",                       limit: 4
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20150217140536) do
     t.string   "housemates",                    limit: 255
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.string   "city",                          limit: 255
   end
 
   create_table "property_images", force: :cascade do |t|

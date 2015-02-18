@@ -1,0 +1,28 @@
+
+<h2>List Of Addresses</h2>
+<table border="1">
+<tr>
+  
+  <th>Street Number</th>
+  <th>Street Address</th>
+  <th>City</th>
+  <th>State</th>
+  <th>Zip Code</th>
+  <th>Country</th>
+</tr>
+
+<% @properties.each do |p| %>
+<tr>
+  
+  <td><%= p.street_number %></td>
+  <td><%= p.street_address %></td>
+  <td><%= p.city %></td>
+  <td><%= p.state %></td>
+  <td><%= p.zip_code %></td>
+  <td><%= p.country %></td>
+ 
+
+<% end %>
+</table><br>
+
+<%= link_to "Back", root_path %>
