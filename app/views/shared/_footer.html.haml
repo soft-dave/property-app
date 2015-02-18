@@ -14,3 +14,13 @@
             %a{:href => "#"}
               %img{:alt => "", :height => "30", :src => "images/twitter-icon.png", :width => "30"}/
             %span Your Next Room Inc
+
+:javascript
+  jQuery(function($) {
+    var contentHeight = $(window).height() - $('.footer').outerHeight(true);
+    $( ".mainContainer" ).css('min-height', contentHeight);
+  });
+  $(window).resize(function(){
+    var contentHeight = $(window).height() - $('.footer').outerHeight(true);
+    $( ".mainContainer" ).css('min-height', contentHeight);
+  });

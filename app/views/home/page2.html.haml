@@ -4,14 +4,14 @@
       .row
         .col-md-12
           .backArrow
-            %img{:alt => "", :height => "25", :src => "images/back-arrow.png", :width => "24"}/
+            = image_tag 'back-arrow.png', :height => 25, :width => 24
       .row
         .col-md-6
           .info
             .rentBlock
               %h3 Rent
               %p
-                %img{:alt => "", :height => "20", :src => "images/dollar.png", :width => "20"}/
+                = image_tag 'dollar.png', :height => 20, :width => 20
                 %input.input.mob.width100{:name => "", :placeholder => "Rent", :type => "text"}/
                 %span.dropDown
                   %select.minwidth95.minwidth135
