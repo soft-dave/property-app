@@ -1,15 +1,11 @@
 .container
   .row
-    .col-md-10.col-md-offset-1
-      .mainBox
-        .row
-          .col-md-12
-            .thankYou
-              %h1.text-center WELCOME
-              %h2.text-center To Your Next Room
-              - unless current_user
-                %p
-                = link_to "Join us on", new_user_session_path
-              - else
-                %p
-                  = current_user.email
+    .col-md-12
+      .welcomeMain
+        %h1 Welcome
+        %h2 To Your Next Room
+        - if current_user
+          %h3
+            = current_user.email
+        - else
+          = link_to "Join us on", new_user_session_path

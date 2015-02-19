@@ -1,4 +1,4 @@
-$(document).ready ->
+$(document).on 'ready ajax:complete ajaxComplete page:change page:load', ->
 
   $('#loaddatepicker').datetimepicker
     format: 'DD/MM/YYYY'

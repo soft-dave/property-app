@@ -16,10 +16,9 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    session[:property_step] = 'four'
+    session[:property_step] = 'three'
     session[:property_params] = {}
     @property = Property.new(session[:property_params])
-    @property.property_images.build
     @property.current_step = session[:property_step]
 
     @utilities = Utility.all

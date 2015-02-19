@@ -14,6 +14,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   %body
     = render "shared/header"
-    .mainContainer
+    %div{:class => "mainContainer #{(controller.controller_name == 'home' and controller.action_name == 'index' ? " welcome" : " ")}"}
       = yield
     = render 'shared/footer'
