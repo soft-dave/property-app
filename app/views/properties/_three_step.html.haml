@@ -5,8 +5,8 @@
       .row
         .col-md-12
           .backArrow
-            = f.submit "Back", :name => "back_button" unless @property.first_step?
-            = image_tag 'back-arrow.png', :height => 25, :width => 24
+            %a{:href => ''}
+              = image_tag 'back-arrow.png', :height => 25, :width => 24
             = f.submit "Confirm",  :class => 'btn btn-success btn-lg widthAuto pull-right marginTop-20'
       .row
         .col-md-12

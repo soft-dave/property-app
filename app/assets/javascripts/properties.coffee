@@ -1,8 +1,7 @@
 $(document).ready ->
 
   $('#loaddatepicker').datetimepicker
-    language: 'en'
-    format: 'dd/MM/yyyy'  
+    format: 'DD/MM/YYYY'
 
   $('#autoUpdate').hide()
   $('#checkbox1').change ->
