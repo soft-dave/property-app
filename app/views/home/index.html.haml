@@ -7,5 +7,9 @@
             .thankYou
               %h1.text-center WELCOME
               %h2.text-center To Your Next Room
-              %p
-              = link_to "Join us on", new_user_session_path
+              - unless current_user
+                %p
+                = link_to "Join us on", new_user_session_path
+              - else
+                %p
+                  = current_user.email

@@ -16,6 +16,9 @@
         %a.topPropertyBtn{:href => "#{new_property_path}"}
           = image_tag 'plusblue-icon.png', :height => 19, :width => 19
           List Your Property
-        = link_to (image_tag ("user.png")), (current_user ? edit_user_registration_path : new_user_session_path)
+          - unless current_user
+            = link_to (image_tag ("user.png")), new_user_session_path
+          - else
+            = link_to (image_tag("user.png")), destroy_user_session_path, :method => :delete
         %a{:href => "#"}
           = image_tag 'well.png', :height => 38, :width => 34

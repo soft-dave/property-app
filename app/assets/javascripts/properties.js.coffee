@@ -17,7 +17,7 @@ $(document).ready ->
       $('#individual_user').attr 'disabled', true
     else
       $('#individual_user').prop 'checked', false
-      $('#individual_user').removeAttr 'disabled'
+      $('#individual_user').removeAttr 'disabled', true
     return
 
   $('#property_property_type').change ->
