@@ -15,10 +15,11 @@ class CreateProperties < ActiveRecord::Migration
       t.boolean :different_address
 
       t.string :street_number
-      t.string :street_address
-      t.string :state
+      t.string :route
+      t.string :locality
+      t.string :administrative_area_level_1
       t.string :country
-      t.integer :zip_code
+      t.integer :postal_code
 
       t.string :unit_number
       t.integer :rent

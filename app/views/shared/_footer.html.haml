@@ -5,15 +5,16 @@
       %a{:href => "#"} Jobs
       %a{:href => "#"} Terms  Policies
     .footerSocialLinks
-      %p Join us on
+      %p
+        %a{:href => new_user_session_path } Join us on
       %p
         %a{:href => "#"}
-          %img{:alt => "", :height => "30", :src => "images/google-icon.png", :width => "30"}/
-          %a{:href => "#"}
-            %img{:alt => "", :height => "30", :src => "images/facebook-icon.png", :width => "30"}/
-            %a{:href => "#"}
-              %img{:alt => "", :height => "30", :src => "images/twitter-icon.png", :width => "30"}/
-            %span Your Next Room Inc
+          = image_tag 'google-icon.png', :height => 30, :width => 30
+        %a{:href => "#"}
+          = image_tag 'facebook-icon.png', :height => 30, :width => 30
+        %a{:href => "#"}
+          = image_tag 'twitter-icon.png', :height => 30, :width => 30
+        %span Your Next Room Inc
 
 :javascript
   jQuery(function($) {

@@ -1,3 +1,10 @@
+= f.hidden_field :street_number, :id => 'street_number'
+= f.hidden_field :route, :id => 'route'
+= f.hidden_field :locality, :id => 'locality'
+= f.hidden_field :administrative_area_level_1, :id => 'administrative_area_level_1'
+= f.hidden_field :country, :id => 'country'
+= f.hidden_field :postal_code, :id => 'postal_code'
+
 .container
   .row
     .col-md-10.col-md-offset-1
@@ -11,20 +18,20 @@
             .boxDetail
               %p
                 %span.dropDown
-                  = f.select :property_type, Property::PROPERTYTYPE, :id=>"propertyType"
+                  = f.select :property_type, Property::PROPERTYTYPE, :id => "propertyType"
               %h2 Privacy
               %p
               %p
                 %span.dropDown
-                  = f.select :privacy, Property::PRIVACY, :id=>"privacyType"
+                  = f.select :privacy, Property::PRIVACY, :id => "privacyType"
               %h3 Property details
               .propertyDetail
                 = image_tag 'bed-icon.png', :height => 21, :width => 21
-                = f.number_field :no_of_badroom, :placeholder => "Number of badroom", :id=>"badroom", :class => 'input'
+                = f.text_field :no_of_badroom, :placeholder => "Number of badroom", :id => "badroom", :class => 'input'
                 = image_tag 'plusb-icon.png', :height => 21, :width => 21
               .propertyDetail
                 = image_tag 'bathroom-icon.png', :height => 21, :width => 21
-                = f.number_field :no_of_bathroom, :placeholder => "Number of bathroom", :id=>"bathroom", :class => 'input'
+                = f.text_field :no_of_bathroom, :placeholder => "Number of bathroom", :id => "bathroom", :class => 'input'
                 = image_tag 'plusb-icon.png', :height => 21, :width => 21
               .detailText
                 %span Allow multiple tenants to have a joint lease ?
@@ -56,9 +63,12 @@
                 = f.check_box :different_address
                 %label Different Address
               %p
-                %input.input2{:name => "", :placeholder => "Address", :type => "text"}/
+                %input.input2{:placeholder => "Address", :type => "text", :id => 'autocomplete'}/
               %p
-                = f.number_field :unit_number, :placeholder => "Unit Number"
+                = f.text_field :unit_number, :placeholder => "Unit Number", :class => 'input2'
         .row
           .col-md-12
             = f.submit "Continue", :class => 'btn btn-success btn-lg pull-right'
+
+:javascript
+  initialize()
