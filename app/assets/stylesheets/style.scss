@@ -443,6 +443,33 @@ footer {
   margin-right: 50px;
 }
 
+.propertyBox {
+  .uploadImg {
+    background: #e1e1e1;
+    color: #fff;
+    font-size: 16px;
+    padding: 5px;
+    min-height: 120px;
+    position: relative;
+  }
+  .uploadPic {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 100%;
+    min-height: 110px;
+    text-align: center;
+    line-height: 100px;
+    span {
+      bottom: 0px;
+      left: 5px;
+      margin: 0;
+      position: absolute;
+      line-height: 20px;
+    }
+  }
+}
+
 .propertyDescription {
   background: #fafafa;
   padding: 12px;
@@ -561,11 +588,4 @@ input.file {
   .widthAuto {
     min-width: auto !important;
   }
-}
-
-.back_button {
-  border: none;
-  background: url(/assets/back-arrow.png) no-repeat scroll 0 0 transparent;
-  height: 30px;
-  width: 29px;
 }
