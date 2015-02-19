@@ -37,48 +37,24 @@
               .categoryBlock
                 %h3.text-center Included Utilities
                 %p
-                  %span Electricity
-                  %span Hot water
-                  %span Heating
-                  %span Gas
-                  %span Stander kitchen applications
+                  - @utilities.each do |u|
+                    %span
+                      = u.title
                 = f.text_field :utilities, :placeholder => "Others", :class => 'input2 width100per'
               .categoryBlock
                 %h3.text-center Amenities and Features
                 %p
-                  %span Furnished
-                  %span Unfurnished
-                  %span Non smoking
-                  %span Internet
-                  = succeed "Gym" do
-                    %span Parking
-                  %span Swimming pool
-                  %span Laundry facility
-                  %span Private bathroom
-                  %span Private kitchen
-                  %span Air-Conditioning
-                  %span Cleaning service
-                  %span Elevator
-                  %span Spa bath
-                  %span TV
-                  %span Wi-Fi
-                  %span Male accommodation
-                  %span Female accommodation
-                  %span Mixed accommodation
-                = f.text_field :amenities_and_features, :placeholder => "Others", :class => 'input2 width100per'
+                  - @amanities.each do |u|
+                    %span
+                      = u.title
+                = f.text_field :amenities_and_features, :placeholder => "Others", :class => 'input2 width100per', 'data-role'=>'tagsinput'
               .categoryBlock
                 %h3.text-center Local Attractions
                 %p
-                  %span University
-                  %span Public transportation
-                  %span Shops and restaurants
-                  %span Central location
-                  %span Downtown
-                  %span Park and outdoor
-                  %span Seafront
-                  %span Waterfront/Riverside
-                  %span Theatre
-                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per', :id => 'nearby_attractions'
+                  - @attractions.each do |u|
+                    %span
+                      = u.title
+                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per', :id => 'nearby_attractions', 'data-role'=>'tagsinput'
         .row
           .col-md-12
             %p  
