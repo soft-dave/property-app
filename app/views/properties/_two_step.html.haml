@@ -47,14 +47,14 @@
                   - @amanities.each do |u|
                     %span
                       = u.title
-                = f.text_field :amenities_and_features, :placeholder => "Others", :class => 'input2 width100per', 'data-role'=>'tagsinput'
+                = f.text_field :amenities_and_features, :placeholder => "Others", :class => 'input2 width100per'
               .categoryBlock
                 %h3.text-center Local Attractions
                 %p
                   - @attractions.each do |u|
                     %span
                       = u.title
-                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per', :id => 'nearby_attractions', 'data-role'=>'tagsinput'
+                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per', :id => 'nearby_attractions'
         .row
           .col-md-12
             %p  
