@@ -1,0 +1,36 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .container
+    .row
+      .col-md-10.col-md-offset-1
+        .mainBox
+          .row
+            .col-md-12.col-md-offset-4
+              .pageTitle
+                %h2 Log in
+          .form-group
+            .row
+              .col-md-5.col-md-offset-4
+                .pageTitle
+                  = f.label :email
+                  %br
+                  = f.email_field :email, autofocus: true , :class => "form-control", :placeholder => "Email", :type => "text"
+            .row
+              .col-md-5.col-md-offset-4
+                .pageTitle
+                  = f.label :password
+                  %br
+                  = f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Password", :type => "password"
+            .row
+              .col-md-5.col-md-offset-4
+                .pageTitle
+                  - if devise_mapping.rememberable?
+                    = f.check_box :remember_me, :type => "checkbox"
+                    = f.label :remember_me
+            .row
+              .col-md-5.col-md-offset-4
+                .pageTitle
+                  = f.submit "Log in", :class => 'btn btn-info'
+                  %br
+                  = render "users/shared/links"  
+            .row
+              .col-md-12
