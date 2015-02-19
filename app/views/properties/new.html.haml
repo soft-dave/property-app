@@ -1,4 +1,4 @@
-= form_for @property do |f|
+= nested_form_for @property do |f|
   .container#dispMessage{:style => "display: #{@property.errors.any? ? '' : 'none'}"}
     .row
       .col-md-10.col-md-offset-1

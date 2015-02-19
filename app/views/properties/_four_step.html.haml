@@ -18,7 +18,8 @@
                       %img#img_gdrive_file{:alt => "", :src => "/assets/home.jpg" }
                       %span Description
                     .fileinputs{:onclick => "$('#filePhoto').click()"} 
-                      = f.file_field :image, :type => "file", :class => "file", :id => 'filePhoto'
+                      = f.fields_for :property_images, :wrapper => false do |task_form|
+                        = task_form.file_field :attachment
                       %input{:type => 'hidden', :id => 'gdrive_file'}
         .row
           .col-md-12

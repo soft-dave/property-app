@@ -1,8 +1,9 @@
 class Property < ActiveRecord::Base
 
   belongs_to :user
-
+  has_many :property_images
   attr_writer :current_step
+  accepts_nested_attributes_for :property_images
   
   PROPERTYTYPE = [['Full property', 'full_property'],['Room / Unit','room_or_unit']]
 
