@@ -17,4 +17,5 @@
 #= require bootstrap-datetimepicker
 #= require turbolinks
 #= require jquery-fileupload
-#= require_tree .
+#= require google-autocomplete
+#= require properties

@@ -3,9 +3,6 @@ $(document).ready ->
   $('#loaddatepicker').datetimepicker
     format: 'DD/MM/YYYY'
   
-  $('#showError1').click ->
-    $('#dispMessage1').show()
-
   $('#autoUpdate').hide()
   $('#checkbox1').change ->
     if @checked
@@ -20,7 +17,7 @@ $(document).ready ->
       $('#individual_user').attr 'disabled', true
     else
       $('#individual_user').prop 'checked', false
-      $('#individual_user').removeAttr 'readonly', true
+      $('#individual_user').removeAttr 'disabled'
     return
 
   $('#property_property_type').change ->
@@ -52,3 +49,4 @@ $(document).ready ->
     'header': 'Select a folder'
     'filter': 'application/vnd.google-apps.folder'
   return
+

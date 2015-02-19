@@ -5,3 +5,47 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+AdminUser.create(:email => 'realestate@example.com', :password => 'password', :password_confirmation => 'password')
+
+Utility.create([
+  {:title => 'Electricity'},
+  {:title => 'Hot water'},
+  {:title => 'Heating'},
+  {:title => 'Gas'},
+  {:title => 'Stander kitchen applications'}
+  ])
+
+Amenity.create([
+  {:title => 'Furnished'},
+  {:title => 'Unfurnished'},
+  {:title => 'Non smoking'},
+  {:title => 'Internet'},
+  {:title => 'Gym'},
+  {:title => 'Parking'},
+  {:title => 'Swimming pool'},
+  {:title => 'Laundry facility'},
+  {:title => 'Private bathroom'},
+  {:title => 'Private kitchen'},
+  {:title => 'Air-Conditioning'},
+  {:title => 'Cleaning service'},
+  {:title => 'Elevator'},
+  {:title => 'Spa bath'},
+  {:title => 'TV'},
+  {:title => 'Wi-Fi'},
+  {:title => 'Male accommodation'},
+  {:title => 'Female accommodation'},
+  {:title => 'Mixed accommodation'}
+  ])
+
+Attraction.create([
+  {:title => 'University'},
+  {:title => 'Public transportation'},
+  {:title => 'Shops and restaurants'},
+  {:title => 'Central location'},
+  {:title => 'Downtown'},
+  {:title => 'Park and outdoor'},
+  {:title => 'Seafront'},
+  {:title => 'Waterfront/Riverside'},
+  {:title => 'Theatre'}
+  ])

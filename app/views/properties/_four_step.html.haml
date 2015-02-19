@@ -16,8 +16,11 @@
                   .title
                     %img#img_gdrive_file
                     .fileinputs
-                      %input.file#gdrive_file{:type => "file"}/
+                      %input.file#gdrive_file{:type => "file"}
+                      %img{:alt => "", :src => "/assets/home.jpg", :id => "imgPreview"}
                     %span Description
+                    .fileinputs{:onclick => "$('#filePhoto').click()"} 
+                      = f.file_field :image, :id => "filePhoto", :type => "file", :class => "file"
         .row
           .col-md-12
             %p  
@@ -28,4 +31,15 @@
             %p  
         .row
           .col-md-12
-            %a.btn.btn-success.btn-lg.pull-right{:href => "#"} Done
+            .actions
+              = f.submit "Done", :class => 'btn btn-success pull-right'
+:javascript
+  var imageLoader = document.getElementById('filePhoto');
+      imageLoader.addEventListener('change', handleImage, false);
+  function handleImage(e) {
+      var reader = new FileReader();
+      reader.onload = function (event) {
+          $('#imgPreview').attr('src',event.target.result);
+      }
+      reader.readAsDataURL(e.target.files[0]);
+  }

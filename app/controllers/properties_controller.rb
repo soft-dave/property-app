@@ -18,6 +18,10 @@ class PropertiesController < ApplicationController
     session[:property_params] = {}
     @property = Property.new(session[:property_params])
     @property.current_step = session[:property_step]
+
+    @utilities = Utility.all
+    @amanities = Amenity.all
+    @attractions = Attraction.all
   end
 
   # GET /properties/1/edit
@@ -28,6 +32,9 @@ class PropertiesController < ApplicationController
   # POST /properties.json
 
   def create
+    @utilities = Utility.all
+    @amanities = Amenity.all
+    @attractions = Attraction.all
     session[:property_params].deep_merge!(params[:property]) if params[:property]
     @property = Property.new(session[:property_params])
     #@property.user_id = current_user.id

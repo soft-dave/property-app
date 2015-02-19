@@ -1,6 +1,5 @@
 = form_for @property do |f|
-  #dispMessage
-  .container
+  .container#dispMessage{:style => "display: #{@property.errors.any? ? '' : 'none'}"}
     .row
       .col-md-10.col-md-offset-1
         .mainBox
@@ -10,11 +9,10 @@
               .boxDetail
                 %div
                   - if @property.errors.any?
-                    #error_explanation
-                      %h3
-                        = pluralize(@property.errors.count, "error")
-                        - @property.errors.full_messages.each do |message|
-                          %br/
-                          = "-> " + message
+                    .alert.alert-danger{:role => "alert"}
+                      - @property.errors.full_messages.each do |message|
+                        %span.sr-only Error:
+                        = message
+                        %br/
     %br/
   = render "#{@property.current_step}_step", :f => f
