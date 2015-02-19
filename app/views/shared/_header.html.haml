@@ -6,17 +6,16 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"}
+      %a.navbar-brand{:href => "#{root_path}"}
         = image_tag 'logo-icon.png', :height => 47, :width => 41
-        / %img{:alt => "", :height => "47", :src => "assets/logo-icon.png", :width => "41"}/
     #navbar.navbar-collapse.collapse
       .topRight.navbar-right
         %a{:href => "#"}
           = image_tag 'thumb.png', :height => 34, :width => 34
         %a.liveField{:href => "#"} Where do you want to live ?
-        %a.topPropertyBtn{:href => "#"}
+        %a.topPropertyBtn{:href => "#{new_property_path}"}
           = image_tag 'plusblue-icon.png', :height => 19, :width => 19
           List Your Property
-        = link_to (image_tag ("user.png"), :size => "38x34"), "/users/sign_in"
+        = link_to (image_tag ("user.png")), (current_user ? edit_user_registration_path : new_user_session_path)
         %a{:href => "#"}
           = image_tag 'well.png', :height => 38, :width => 34

@@ -1,70 +1,11 @@
-.row
-  .col-md-10.col-md-offset-1
-    .mainBox
-      .row
-        .col-md-11.col-md-offset-1
-          .pageTitle
-            %h2 Type of Property
-      .row
-        .col-md-5.col-md-offset-1
-          .boxDetail
-            %p
-              %span.dropDown
-                %select.minwidth135
-                  %option Lease Type
-                  %option Lease Type
-                  %option Lease Type
-            %h2 Privacy
-            %p
-            %p
-              %span.dropDown
-                %select.minwidth135
-                  %option Lease Type
-                  %option Lease Type
-                  %option Lease Type
-            %h3 Property details
-            .propertyDetail
-              = image_tag 'bed-icon.png', :height => 21, :width => 21
-              %input.input{:name => "", :placeholder => "Number of bedrooms", :type => "text"}/
-              = image_tag 'plusb-icon.png', :height => 21, :width => 21
-            .propertyDetail
-              = image_tag 'bathroom-icon.png', :height => 21, :width => 21
-              %input.input{:name => "", :placeholder => "Number of bathrooms", :type => "text"}/
-              = image_tag 'plusb-icon.png', :height => 21, :width => 21
-            .detailText
-              %span Allow multiple tenants to have a joint lease ?
-              .verList
-                %input{:name => "check", :type => "checkbox"}/
-                %label.minWeight280 Yes. Allow multiple users to share the property
-              .verList
-                %input{:name => "check", :type => "checkbox"}/
-                %label.minWeight280 No. Only allow individual users to rent the property
-        .col-md-6
-          .boxDetail.rightPart
-            %p
-              %span.dropDown
-                = image_tag 'cal-icon.png', :height => 21, :width => 21
-                %select.minwidth135
-                  %option Lease Type
-                  %option Lease Type
-                  %option Lease Type
-            %p
-              = image_tag 'cal-icon.png', :height => 21, :width => 21
-              %input.input2{:name => "", :placeholder => "When is the property available from?", :type => "text"}/
-            .verList
-              %input{:name => "check", :type => "checkbox"}/
-              %label.text-right Accept Monday-Friday Bookings
-            %h3 Location
-            .verList
-              %input{:name => "check", :type => "checkbox"}/
-              %label Same As Landlord address
-            .verList
-              %input{:name => "check", :type => "checkbox"}/
-              %label Different Address
-            %p
-              %input.input2{:name => "", :placeholder => "Address", :type => "text"}/
-            %p
-              %input.input2{:name => "", :placeholder => "Unit Number", :type => "text"}/
-      .row
-        .col-md-12
-          %a.btn.btn-success.btn-lg.pull-right{:href => "#"} Continue
+.container
+  .row
+    .col-md-10.col-md-offset-1
+      .mainBox
+        .row
+          .col-md-12
+            .thankYou
+              %h1.text-center WELCOME
+              %h2.text-center To Your Next Room
+              %p
+              = link_to "Join us on", new_user_session_path

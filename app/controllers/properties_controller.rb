@@ -1,5 +1,6 @@
 class PropertiesController < ApplicationController
 
+  before_action :authenticate_user!
   before_action :set_property, only: [:show, :edit, :update, :destroy]
 
   # GET /properties
@@ -15,6 +16,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
+    session[:property_step] = 'one'
     session[:property_params] = {}
     @property = Property.new(session[:property_params])
     @property.current_step = session[:property_step]
@@ -37,7 +39,7 @@ class PropertiesController < ApplicationController
     @attractions = Attraction.all
     session[:property_params].deep_merge!(params[:property]) if params[:property]
     @property = Property.new(session[:property_params])
-    #@property.user_id = current_user.id
+    @property.user_id = current_user.id
     @property.current_step = session[:property_step]
     if @property.valid?
       if params[:back_button]
