@@ -78,7 +78,7 @@
                   %span Seafront
                   %span Waterfront/Riverside
                   %span Theatre
-                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per'
+                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per', :id => 'nearby_attractions'
         .row
           .col-md-12
             %p  
@@ -86,3 +86,7 @@
         .row
           .col-md-12
             = f.submit "Continue", :class => 'btn btn-success btn-lg pull-right'
+
+:javascript
+  initializeNearbyAttraction()
+  

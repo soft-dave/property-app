@@ -28,3 +28,7 @@ window.fillInAddress = ->
       document.getElementById(addressType).value = val
     i++
   return
+
+window.initializeNearbyAttraction = ->
+  nearby_attraction = document.getElementById('nearby_attractions')
+  nearby = new (google.maps.places.Autocomplete)(nearby_attraction)
