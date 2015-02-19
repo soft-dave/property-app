@@ -30,7 +30,7 @@ class Property < ActiveRecord::Base
   end
   
   def steps
-    %w[one two three]
+    %w[one two three four]
   end
 
   def next_step

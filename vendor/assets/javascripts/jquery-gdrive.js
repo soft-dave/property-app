@@ -64,12 +64,11 @@
 			var docum = data[google.picker.Response.DOCUMENTS][0]['thumbnails'][3];
 			var doc = data.docs[0];
 			var file_id = doc.id;
-	        var url = doc[google.picker.Document.URL];
-	        var filename = doc[google.picker.Document.NAME];
-	        console.log(url);
-	        $('#'+target_id).val(docum.url);
-	        $('#img_'+target_id).attr('src', docum.url);
-	        $('#'+target_id).change();
+      var url = doc[google.picker.Document.URL];
+      var filename = doc[google.picker.Document.NAME];
+      $('#'+target_id).val(docum.url);
+      $('#img_'+target_id).attr('src', docum.url);
+      $('#'+target_id).change();
 		}
 	};
 	
