@@ -47,4 +47,5 @@ gem 'devise'
 gem 'paperclip'
 gem "jquery-fileupload-rails"
 gem 'twitter-bootstrap-rails'
-gem 'bootstrap-datetimepicker-rails'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'

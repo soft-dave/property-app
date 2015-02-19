@@ -40,8 +40,10 @@
                 = image_tag 'cal-icon.png', :height => 21, :width => 21
                 = f.select :lease_type, Property.lease_types
             %p
-              = image_tag 'cal-icon.png', :height => 21, :width => 21
-              = f.text_field :availibility, :placeholder => "When is the property available from?", :id=>"loaddatepicker", :class => 'input2'
+              .row
+                .col-sm-12
+                  = image_tag 'cal-icon.png', :height => 21, :width => 21
+                  = f.text_field :availibility, :placeholder => "When is the property available from?", :id=>"loaddatepicker", :class => 'input2'
             .verList
               = f.check_box :accept_mon_fri_booking
               %label.text-right Accept Monday-Friday Bookings
