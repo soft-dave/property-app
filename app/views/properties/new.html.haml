@@ -1,13 +1,12 @@
 = form_for @property do |f|
   #dispMessage
+  .container
     .row
       .col-md-10.col-md-offset-1
         .mainBox
           .row
             .col-md-11.col-md-offset-1
               .pageTitle
-          .row
-            .col-md-5.col-md-offset-1
               .boxDetail
                 %div
                   - if @property.errors.any?
