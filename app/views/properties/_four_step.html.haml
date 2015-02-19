@@ -19,7 +19,7 @@
                       %span Description
                     .fileinputs{:onclick => "$('#filePhoto').click()"} 
                       = f.fields_for :property_images, :wrapper => false do |task_form|
-                        = task_form.file_field :attachment
+                        = task_form.file_field :attachment, :id => 'filePhoto', :class => 'file'
                       %input{:type => 'hidden', :id => 'gdrive_file'}
         .row
           .col-md-12
