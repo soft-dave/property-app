@@ -49,3 +49,4 @@ gem "jquery-fileupload-rails"
 gem 'twitter-bootstrap-rails'
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
+gem 'activeadmin', github: 'activeadmin'

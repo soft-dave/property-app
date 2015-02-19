@@ -35,12 +35,13 @@
                 = image_tag 'plusb-icon.png', :height => 21, :width => 21
               .detailText
                 %span Allow multiple tenants to have a joint lease ?
-                %p
-                  Yes. Allow multiple users to share the property
+                .verList
                   = f.check_box :allow_multiple_user_to_share, :id => "multiple_user"
-                %p
-                  No. Only allow individual users to rent the property
+                  %label Yes. Allow multiple users to share the property
+                .verList
                   = f.check_box :allow_individual_user_to_rent, :id => "individual_user"
+                  %label No. Only allow individual users to rent the property
+
           .col-md-6
             .boxDetail.rightPart
               %p
