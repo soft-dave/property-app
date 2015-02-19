@@ -17,7 +17,6 @@
         %a.topPropertyBtn{:href => "#"}
           = image_tag 'plusblue-icon.png', :height => 19, :width => 19
           List Your Property
-        %a{:href => "#"}
-          = image_tag 'user.png', :height => 38, :width => 34
+        = link_to (image_tag ("user.png"), :size => "38x34"), "/users/sign_in"
         %a{:href => "#"}
           = image_tag 'well.png', :height => 38, :width => 34

@@ -1,36 +1,36 @@
 = f.hidden_field :privacy, :value => @property.privacy, :id=>"privacy"
-.row
-  .col-md-10.col-md-offset-1
-    .mainBox.innerPage
-      .row
-        .col-md-12
-          .backArrow
-            %a{:href => ''}
-              = image_tag 'back-arrow.png', :height => 25, :width => 24
-            = f.submit "Confirm",  :class => 'btn btn-success btn-lg widthAuto pull-right marginTop-20'
-      .row
-        .col-md-12
-          .info
-            .rentBlock
-              %h3 Property
-              .propertyBox
-                .title
-                  %span Property Title
-                  .camImg
-                    %a{:href => "#"}
-                      = image_tag 'cam-icon.png', :height => 47, :width => 47
-                %ul
-                  %li
-                    %label Property description
-                    = f.text_field :description
-                  %li
-                    %label Rules
-                    = f.text_field :rules
-                  - if @property.privacy == 'shared_property'
+.container
+  .row
+    .col-md-10.col-md-offset-1
+      .mainBox.innerPage
+        .row
+          .col-md-12
+            .backArrow
+              = f.submit '', :name => 'back_button', :class => 'back_button'
+              = f.submit "Confirm",  :class => 'btn btn-success btn-lg widthAuto pull-right marginTop-20'
+        .row
+          .col-md-12
+            .info
+              .rentBlock
+                %h3 Property
+                .propertyBox
+                  .title
+                    %span Property Title
+                    .camImg
+                      %a{:href => "#"}
+                        = image_tag 'cam-icon.png', :height => 47, :width => 47
+                  %ul
                     %li
-                      %label Housemates
-                      = f.text_field :housemates
-      .row
-        .col-md-12
-          %p  
-          %p
+                      %label Property description
+                      = f.text_field :description
+                    %li
+                      %label Rules
+                      = f.text_field :rules
+                    - if @property.privacy == 'shared_property'
+                      %li
+                        %label Housemates
+                        = f.text_field :housemates
+        .row
+          .col-md-12
+            %p  
+            %p

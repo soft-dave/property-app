@@ -3,86 +3,90 @@
 = f.hidden_field :allow_multiple_user_to_share, :value => @property.allow_multiple_user_to_share, :id=>"allow"
 = f.hidden_field :no_of_badroom, :value => @property.no_of_badroom, :id=>"numbadroom"
 
-.row
-  .col-md-10.col-md-offset-1
-    .mainBox.innerPage
-      .row
-        .col-md-12
-          .backArrow
-            %a{:href => '#'}
-              = image_tag 'back-arrow.png', :height => 25, :width => 24
-      .row
-        .col-md-6
-          .info
-            .rentBlock
-              %h3 Rent
-              %p
-                = image_tag 'dollar.png', :height => 20, :width => 20
-                = f.text_field :rent, :placeholder => "Rent", :class => 'input mob width100'
-                %span.dropDown
-                  = f.select :rent_type, Property.rent_types, :class => 'minwidth95 minwidth135'
-              .verList.inner
-                %input#checkbox1{:name => "check", :type => "checkbox"}/
-                %label Allow rent negotiation
+.container
+  .row
+    .col-md-10.col-md-offset-1
+      .mainBox.innerPage
+        .row
+          .col-md-12
+            .backArrow
+              = f.submit '', :name => 'back_button', :class => 'back_button'
+        .row
+          .col-md-6
+            .info
+              .rentBlock
+                %h3 Rent
+                %p
+                  = image_tag 'dollar.png', :height => 20, :width => 20
+                  = f.text_field :rent, :placeholder => "Rent", :class => 'input mob width100'
+                  %span.dropDown
+                    = f.select :rent_type, Property.rent_types, :class => 'minwidth95 minwidth135'
+                .verList.inner
+                  %input#checkbox1{:name => "check", :type => "checkbox"}/
+                  %label Allow rent negotiation
 
-          .info#autoUpdate.autoUpdate
-            .rentBlock
-              %p
-                = f.text_field :unit_title, :placeholder => "Unit title", :class => 'input mob width100'
-              %p
-                = f.text_field :unit_rent, :placeholder => "Unit rent", :class => 'input mob width100'
+            .info#autoUpdate.autoUpdate
+              .rentBlock
+                %p
+                  = f.text_field :unit_title, :placeholder => "Unit title", :class => 'input mob width100'
+                %p
+                  = f.text_field :unit_rent, :placeholder => "Unit rent", :class => 'input mob width100'
 
-        .col-md-6
-          .info
-            .categoryBlock
-              %h3.text-center Included Utilities
-              %p
-                %span Electricity
-                %span Hot water
-                %span Heating
-                %span Gas
-                %span Stander kitchen applications
-              = f.text_field :utilities, :placeholder => "Others", :class => 'input2 width100per'
-            .categoryBlock
-              %h3.text-center Amenities and Features
-              %p
-                %span Furnished
-                %span Unfurnished
-                %span Non smoking
-                %span Internet
-                = succeed "Gym" do
-                  %span Parking
-                %span Swimming pool
-                %span Laundry facility
-                %span Private bathroom
-                %span Private kitchen
-                %span Air-Conditioning
-                %span Cleaning service
-                %span Elevator
-                %span Spa bath
-                %span TV
-                %span Wi-Fi
-                %span Male accommodation
-                %span Female accommodation
-                %span Mixed accommodation
-              = f.text_field :amenities_and_features, :placeholder => "Others", :class => 'input2 width100per'
-            .categoryBlock
-              %h3.text-center Local Attractions
-              %p
-                %span University
-                %span Public transportation
-                %span Shops and restaurants
-                %span Central location
-                %span Downtown
-                %span Park and outdoor
-                %span Seafront
-                %span Waterfront/Riverside
-                %span Theatre
-              = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per'
-      .row
-        .col-md-12
-          %p  
-          %p  
-      .row
-        .col-md-12
-          = f.submit "Continue", :class => 'btn btn-success btn-lg pull-right'
+          .col-md-6
+            .info
+              .categoryBlock
+                %h3.text-center Included Utilities
+                %p
+                  %span Electricity
+                  %span Hot water
+                  %span Heating
+                  %span Gas
+                  %span Stander kitchen applications
+                = f.text_field :utilities, :placeholder => "Others", :class => 'input2 width100per'
+              .categoryBlock
+                %h3.text-center Amenities and Features
+                %p
+                  %span Furnished
+                  %span Unfurnished
+                  %span Non smoking
+                  %span Internet
+                  = succeed "Gym" do
+                    %span Parking
+                  %span Swimming pool
+                  %span Laundry facility
+                  %span Private bathroom
+                  %span Private kitchen
+                  %span Air-Conditioning
+                  %span Cleaning service
+                  %span Elevator
+                  %span Spa bath
+                  %span TV
+                  %span Wi-Fi
+                  %span Male accommodation
+                  %span Female accommodation
+                  %span Mixed accommodation
+                = f.text_field :amenities_and_features, :placeholder => "Others", :class => 'input2 width100per'
+              .categoryBlock
+                %h3.text-center Local Attractions
+                %p
+                  %span University
+                  %span Public transportation
+                  %span Shops and restaurants
+                  %span Central location
+                  %span Downtown
+                  %span Park and outdoor
+                  %span Seafront
+                  %span Waterfront/Riverside
+                  %span Theatre
+                = f.text_field :nearby_attractions, :placeholder => "Nearby attractions", :class => 'input2 width100per', :id => 'nearby_attractions'
+        .row
+          .col-md-12
+            %p  
+            %p  
+        .row
+          .col-md-12
+            = f.submit "Continue", :class => 'btn btn-success btn-lg pull-right'
+
+:javascript
+  initializeNearbyAttraction()
+  

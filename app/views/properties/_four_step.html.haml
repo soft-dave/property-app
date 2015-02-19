@@ -5,18 +5,18 @@
         .row
           .col-md-12
             .backArrow
-              %a{:href => "#"}
-                %img{:alt => "", :height => "25", :src => "images/back-arrow.png", :width => "24"}/
-              %a.camIcon{:href => "#"}
-                %img{:alt => "", :height => "47", :src => "images/cam-icon.png", :width => "47"}/
+              = f.submit '', :name => 'back_button', :class => 'back_button'
+              %a.camIcon#gdrive_file_selector{:href => "#"}
+                = image_tag 'cam-icon.png', :height => 47, :width => 47
         .row
           .col-md-12
             .info
               .rentBlock
                 .propertyBox
                   .title
+                    %img#img_gdrive_file
                     .fileinputs
-                      %input.file{:type => "file"}/
+                      %input.file#gdrive_file{:type => "file"}/
                     %span Description
         .row
           .col-md-12
