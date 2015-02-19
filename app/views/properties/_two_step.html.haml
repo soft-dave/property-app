@@ -17,8 +17,12 @@
               .rentBlock
                 %h3 Rent
                 %p
+                  %h3{:class => "control-group #{@property.errors[:rent].any? ? 'error' : ''}"}
                   = image_tag 'dollar.png', :height => 20, :width => 20
                   = f.text_field :rent, :placeholder => "Rent", :class => 'input mob width100'
+                  - if @property.errors[:rent].any?
+                    %span.text-error.text-message= @property.errors[:rent].first
+
                   %span.dropDown
                     = f.select :rent_type, Property.rent_types, :class => 'minwidth95 minwidth135'
                 .verList.inner
@@ -28,9 +32,15 @@
             .info#autoUpdate.autoUpdate
               .rentBlock
                 %p
+                  %h3{:class => "control-group #{@property.errors[:unit_title].any? ? 'error' : ''}"}
                   = f.text_field :unit_title, :placeholder => "Unit title", :class => 'input mob width100'
+                  - if @property.errors[:unit_title].any?
+                    %span.text-error.text-message= @property.errors[:unit_title].first
                 %p
+                  %h3{:class => "control-group #{@property.errors[:unit_rent].any? ? 'error' : ''}"}
                   = f.text_field :unit_rent, :placeholder => "Unit rent", :class => 'input mob width100'
+                  - if @property.errors[:unit_rent].any?
+                    %span.text-error.text-message= @property.errors[:unit_rent].first
 
           .col-md-6
             .info

@@ -22,14 +22,27 @@
                   %ul
                     %li
                       %label Property description
-                      = f.text_field :description
+                      %h3{:class => "control-group #{@property.errors[:description].any? ? 'error' : ''}"}
+                        = image_tag 'dollar.png', :height => 20, :width => 20
+                        = f.text_field :description
+                        - if @property.errors[:description].any?
+                          %span.text-error.text-message= @property.errors[:description].first
                     %li
                       %label Rules
-                      = f.text_field :rules
+                      %h3{:class => "control-group #{@property.errors[:rules].any? ? 'error' : ''}"}
+                        = image_tag 'dollar.png', :height => 20, :width => 20
+                        = f.text_field :rules
+                        - if @property.errors[:rules].any?
+                          %span.text-error.text-message= @property.errors[:rules].first
+
                     - if @property.privacy == 'shared_property'
                       %li
                         %label Housemates
-                        = f.text_field :housemates
+                        %h3{:class => "control-group #{@property.errors[:housemates].any? ? 'error' : ''}"}
+                          = image_tag 'dollar.png', :height => 20, :width => 20
+                          = f.text_field :housemates
+                          - if @property.errors[:housemates].any?
+                            %span.text-error.text-message= @property.errors[:housemates].first
         .row
           .col-md-12
             %p  

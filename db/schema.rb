@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(version: 20150219122308) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "myuploaders", force: :cascade do |t|
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
   create_table "properties", force: :cascade do |t|
     t.integer  "user_id",                       limit: 4
     t.string   "property_type",                 limit: 255

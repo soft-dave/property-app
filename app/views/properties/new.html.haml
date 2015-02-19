@@ -1,18 +1,2 @@
 = nested_form_for @property do |f|
-  .container#dispMessage{:style => "display: #{@property.errors.any? ? '' : 'none'}"}
-    .row
-      .col-md-10.col-md-offset-1
-        .mainBox
-          .row
-            .col-md-11.col-md-offset-1
-              .pageTitle
-              .boxDetail
-                %div
-                  - if @property.errors.any?
-                    .alert.alert-danger{:role => "alert"}
-                      - @property.errors.full_messages.each do |message|
-                        %span.sr-only Error:
-                        = message
-                        %br/
-    %br/
   = render "#{@property.current_step}_step", :f => f

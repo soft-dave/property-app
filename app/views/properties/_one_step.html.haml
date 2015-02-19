@@ -26,13 +26,21 @@
                   = f.select :privacy, Property::PRIVACY, :id => "privacyType"
               %h3 Property details
               .propertyDetail
-                = image_tag 'bed-icon.png', :height => 21, :width => 21
-                = f.text_field :no_of_badroom, :placeholder => "Number of badroom", :id => "badroom", :class => 'input'
-                = image_tag 'plusb-icon.png', :height => 21, :width => 21
+                %h3{:class => "control-group #{@property.errors[:no_of_badroom].any? ? 'error' : ''}"}
+                  = image_tag 'bed-icon.png', :height => 21, :width => 21
+                  = f.text_field :no_of_badroom, :placeholder => "Number of badroom", :id => "badroom", :class => 'input'
+                  = image_tag 'plusb-icon.png', :height => 21, :width => 21
+                  - if @property.errors[:no_of_badroom].any?
+                    %span.text-error.text-message= @property.errors[:no_of_badroom].first
+
               .propertyDetail
+                %h3{:class => "control-group #{@property.errors[:no_of_bathroom].any? ? 'error' : ''}"}
                 = image_tag 'bathroom-icon.png', :height => 21, :width => 21
                 = f.text_field :no_of_bathroom, :placeholder => "Number of bathroom", :id => "bathroom", :class => 'input'
                 = image_tag 'plusb-icon.png', :height => 21, :width => 21
+                - if @property.errors[:no_of_badroom].any?
+                  %span.text-error.text-message= @property.errors[:no_of_badroom].first
+
               .detailText
                 %span Allow multiple tenants to have a joint lease ?
                 .verList
@@ -51,8 +59,11 @@
               %p
                 .row
                   .col-sm-12
+                    %h3{:class => "control-group #{@property.errors[:availibility].any? ? 'error' : ''}"}
                     = image_tag 'cal-icon.png', :height => 21, :width => 21
                     = f.text_field :availibility, :placeholder => "When is the property available from?", :id=>"loaddatepicker", :class => 'input2'
+                    - if @property.errors[:availibility].any?
+                      %span.text-error.text-message= @property.errors[:availibility].first
               .verList
                 = f.check_box :accept_mon_fri_booking
                 %label.text-right Accept Monday-Friday Bookings
@@ -66,7 +77,10 @@
               %p
                 %input.input2{:placeholder => "Address", :type => "text", :id => 'autocomplete'}/
               %p
+                %h3{:class => "control-group #{@property.errors[:unit_number].any? ? 'error' : ''}"}
                 = f.text_field :unit_number, :placeholder => "Unit Number", :class => 'input2'
+                - if @property.errors[:unit_number].any?
+                  %span.text-error.text-message= @property.errors[:unit_number].first
         .row
           .col-md-12
             = f.submit "Continue", :class => 'btn btn-success btn-lg pull-right', :id=> 'showError'
