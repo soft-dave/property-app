@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'thankyou' => 'properties#thank_you'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

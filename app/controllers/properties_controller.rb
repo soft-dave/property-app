@@ -47,7 +47,7 @@ class PropertiesController < ApplicationController
     else
       session[:property_step] = session[:property_params] = nil
       flash[:notice] = "property saved!"
-      redirect_to @property
+      redirect_to thankyou_url
     end
   end
 
@@ -73,6 +73,9 @@ class PropertiesController < ApplicationController
       format.html { redirect_to properties_url, notice: 'Property was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def thank_you
   end
 
   private

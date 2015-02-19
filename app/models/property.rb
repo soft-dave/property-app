@@ -23,7 +23,7 @@ class Property < ActiveRecord::Base
 
   validates_presence_of :description, :if => lambda { |o| o.current_step == "three" }
   validates_presence_of :rules, :if => lambda { |o| o.current_step == "three" }
-  #validates_presence_of :housemates, :if => lambda { |o| o.current_step == "three" || self.privacy == 'private_property' }
+  #validates_presence_of :housemates, :if => lambda { |o| o.current_step == "three" }
 
   def current_step
     @current_step || steps.first
