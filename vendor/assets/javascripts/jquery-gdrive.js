@@ -68,7 +68,8 @@
       var filename = doc[google.picker.Document.NAME];
       $('#'+target_id).val(docum.url);
       $('#img_'+target_id).attr('src', docum.url);
-      $('#'+target_id).change();
+      $('#img_'+target_id).attr('height', '110px');
+      $('#img_'+target_id).attr('width', '223px');
 		}
 	};
 	
