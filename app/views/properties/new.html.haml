@@ -1,10 +1,21 @@
-= form_for @property, :html => { :class => 'form-horizontal' } do |f|
-  - if @property.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@property.errors.count, "error")
-        prohibited this property from being saved:
-      %ul
-        - @property.errors.full_messages.each do |message|
-          %li= message
+= form_for @property do |f|
+  #dispMessage
+    .row
+      .col-md-10.col-md-offset-1
+        .mainBox
+          .row
+            .col-md-11.col-md-offset-1
+              .pageTitle
+          .row
+            .col-md-5.col-md-offset-1
+              .boxDetail
+                %div
+                  - if @property.errors.any?
+                    #error_explanation
+                      %h3
+                        = pluralize(@property.errors.count, "error")
+                        - @property.errors.full_messages.each do |message|
+                          %br/
+                          = "-> " + message
+    %br/
   = render "#{@property.current_step}_step", :f => f

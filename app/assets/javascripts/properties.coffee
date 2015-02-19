@@ -2,6 +2,9 @@ $(document).ready ->
 
   $('#loaddatepicker').datetimepicker
     format: 'DD/MM/YYYY'
+  
+  $('#showError1').click ->
+    $('#dispMessage1').show()
 
   $('#autoUpdate').hide()
   $('#checkbox1').change ->
