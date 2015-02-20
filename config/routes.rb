@@ -2,16 +2,10 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :properties
-  resources :myuploaders
 
   devise_for :users
-  resources :property_images
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  get 'page2' => 'home#page2'
-  get 'page3' => 'home#page3'
-  get 'page4' => 'home#page4'
 
   root 'home#index'
 
